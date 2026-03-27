@@ -6,6 +6,7 @@
     <title>Nuestra Boda | Marta & Javier</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
@@ -17,8 +18,7 @@
         }
 
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             background-color: #f0f0f0;
             color: var(--texto-oscuro);
             font-family: 'Playfair Display', serif;
@@ -37,19 +37,11 @@
         }
 
         #music-box {
-            position: fixed;
-            top: 15px;
-            right: 15px;
-            z-index: 1000;
+            position: fixed; top: 15px; right: 15px; z-index: 1000;
             background: rgba(255,255,255,0.8);
             border: 1px solid var(--color-oro);
-            padding: 8px 15px;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            backdrop-filter: blur(5px);
+            padding: 8px 15px; border-radius: 50px; cursor: pointer;
+            display: flex; align-items: center; backdrop-filter: blur(5px);
         }
 
         #m-icon { color: var(--color-oro); margin-right: 6px; }
@@ -62,27 +54,17 @@
         }
 
         .img-hero {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            width: 100%; height: auto; display: block;
+            border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         h1.caligrafica {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.5rem;
-            color: var(--color-acento);
-            margin: 20px 0 10px;
-            font-weight: normal;
+            font-size: 3.5rem; color: var(--color-acento);
+            margin: 20px 0 10px; font-weight: normal;
         }
 
-        .fecha-portada {
-            font-size: 1rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--color-oro);
-        }
+        .fecha-portada { font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-oro); }
 
         section { padding: 60px 25px; border-bottom: 1px solid #f2ede4; }
         .label-section { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-acento); margin-bottom: 15px; font-weight: bold; }
@@ -92,49 +74,36 @@
         .divider-oro { width: 80px; height: 1px; background-color: var(--color-oro); margin: 40px auto; opacity: 0.6; }
         
         .img-framed {
-            width: 100%;
-            border: 10px solid white;
-            border-radius: 2px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            box-sizing: border-box;
-            margin-top: 30px;
+            width: 100%; border: 10px solid white; border-radius: 2px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); box-sizing: border-box; margin-top: 30px;
         }
 
         .datos-caja { background-color: rgba(255,255,255,0.5); padding: 40px 20px; border-radius: 8px; border: 1px solid #f2ede4; }
         .dato-item { font-size: 1.1rem; margin: 10px 0; }
-        .dato-item strong { color: var(--color-acento); }
 
+        /* Botones con icono */
         .btn-romantico {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 30px;
-            background-color: white;
-            color: var(--color-acento);
-            text-decoration: none;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            border: 1px solid var(--color-oro);
-            border-radius: 30px;
-            font-weight: bold;
+            display: inline-flex; align-items: center; gap: 10px;
+            margin-top: 25px; padding: 12px 25px;
+            background-color: white; color: var(--color-acento);
+            text-decoration: none; font-size: 0.75rem;
+            letter-spacing: 2px; border: 1px solid var(--color-oro);
+            border-radius: 30px; font-weight: bold; transition: 0.3s;
         }
+        .btn-romantico:hover { background-color: var(--color-oro); color: white; }
 
         .btn-confirmar {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 20px 40px;
-            background-color: var(--color-acento);
-            color: white;
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            border-radius: 30px;
-            width: 80%;
-            font-weight: bold;
+            display: inline-block; margin-top: 30px; padding: 20px 40px;
+            background-color: var(--color-acento); color: white;
+            text-decoration: none; font-size: 0.9rem;
+            letter-spacing: 2px; border-radius: 30px; width: 80%; font-weight: bold;
         }
 
-        .timer-container { display: flex; justify-content: center; gap: 15px; margin: 40px 0; }
-        .t-val { display: block; font-size: 2rem; color: var(--color-oro); font-weight: bold; }
-        .t-lab { font-size: 0.65rem; text-transform: uppercase; color: var(--color-acento); }
+        /* Contador funcional */
+        .timer-container { display: flex; justify-content: center; gap: 12px; margin: 30px 0; }
+        .t-block { background: white; padding: 15px 10px; border-radius: 8px; min-width: 60px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+        .t-val { display: block; font-size: 1.8rem; color: var(--color-oro); font-weight: bold; line-height: 1; }
+        .t-lab { font-size: 0.6rem; text-transform: uppercase; color: var(--color-acento); margin-top: 5px; display: block; }
     </style>
 </head>
 <body onclick="iniciarMusica()">
@@ -162,10 +131,16 @@
                 "Todo comenzó con una mirada y una sonrisa que cambió nuestro destino. Descubrimos que la vida es mucho más bella cuando se camina de la mano..."
             </p>
             <img src="https://www.dropbox.com/scl/fi/yxcamxu6ark6qj5jf9da1/novios-corriendo.jpg?rlkey=wt1aapl5nh89afj7n53zou3qt&raw=1" class="img-framed">
-            <div class="divider-oro"></div>
-            <p class="historia-texto">
-                "Nuestro viaje apenas comienza y no importa a dónde nos lleve la vida, mientras sea de tu mano..."
-            </p>
+        </section>
+
+        <section id="reloj">
+            <p class="label-section">¡Faltan solo!</p>
+            <div class="timer-container">
+                <div class="t-block"><span class="t-val" id="days">00</span><span class="t-lab">Días</span></div>
+                <div class="t-block"><span class="t-val" id="hours">00</span><span class="t-lab">Hrs</span></div>
+                <div class="t-block"><span class="t-val" id="minutes">00</span><span class="t-lab">Min</span></div>
+                <div class="t-block"><span class="t-val" id="seconds">00</span><span class="t-lab">Seg</span></div>
+            </div>
         </section>
 
         <section>
@@ -176,17 +151,9 @@
                 <p class="dato-item">Xalapa, Veracruz</p>
                 <div class="divider-oro" style="margin: 20px auto; width: 40px;"></div>
                 <p class="dato-item"><strong>17:00 Horas</strong></p>
-                <a href="#" class="btn-romantico">VER UBICACIÓN</a>
-            </div>
-        </section>
-
-        <section>
-            <p class="label-section">¡Estamos listos!</p>
-            <div class="timer-container">
-                <div class="t-block"><span class="t-val" id="d">00</span><span class="t-lab">Días</span></div>
-                <div class="t-block"><span class="t-val" id="h">00</span><span class="t-lab">Hrs</span></div>
-                <div class="t-block"><span class="t-val" id="m">00</span><span class="t-lab">Min</span></div>
-                <div class="t-block"><span class="t-val" id="s">00</span><span class="t-lab">Seg</span></div>
+                <a href="https://maps.google.com" target="_blank" class="btn-romantico">
+                    <i class="fa-solid fa-location-dot"></i> VER UBICACIÓN
+                </a>
             </div>
         </section>
 
@@ -197,7 +164,9 @@
                 <p class="dato-item">Xalapa, Veracruz</p>
                 <div class="divider-oro" style="margin: 20px auto; width: 40px;"></div>
                 <p class="dato-item"><strong>19:30 Horas</strong></p>
-                <a href="#" class="btn-romantico">VER UBICACIÓN</a>
+                <a href="https://maps.google.com" target="_blank" class="btn-romantico">
+                    <i class="fa-solid fa-location-dot"></i> VER UBICACIÓN
+                </a>
             </div>
             <img src="https://www.dropbox.com/scl/fi/snutqjlkrv7oglqswicq2/novios-besandoce.jpg?rlkey=ad7z44z08wgr0f4wcd20et7nz&raw=1" class="img-framed">
         </section>
@@ -205,13 +174,14 @@
         <section style="padding: 100px 25px; background-color: white; border: none;">
             <h2 class="caligrafica" style="font-size: 3rem;">¡Te esperamos!</h2>
             <p style="font-size: 1.1rem; color: #666; font-style: italic;">
-                "Por favor, confirma tu asistencia para hacer este día aún más especial."
+                "Tu presencia es el mejor regalo que podemos recibir."
             </p>
-            <a href="https://wa.me/5212281234567" class="btn-confirmar">CONFIRMAR ASISTENCIA</a>
+            <a href="https://wa.me/5212281234567?text=Hola! Confirmo mi asistencia a la boda." class="btn-confirmar">CONFIRMAR ASISTENCIA</a>
         </section>
     </div>
 
     <script>
+        // MÚSICA
         var audio = document.getElementById('cancion');
         var mIcon = document.getElementById('m-icon');
         var mText = document.getElementById('m-text');
@@ -219,7 +189,8 @@
 
         function iniciarMusica() {
             if (!musicaIniciada) {
-                audio.play(); musicaIniciada = true;
+                audio.play().catch(e => console.log("Esperando interacción")); 
+                musicaIniciada = true;
                 mIcon.innerHTML = "⏸"; mText.innerHTML = "PAUSAR";
             }
         }
@@ -230,18 +201,29 @@
             else { audio.pause(); mIcon.innerHTML = "▶"; mText.innerHTML = "MUSICA"; }
         }
 
-        function actualizarContador() {
-            const fechaBoda = new Date("Feb 14, 2026 17:00:00").getTime();
+        // CONTADOR ARREGLADO
+        function actualizarReloj() {
+            const fechaBoda = new Date("February 14, 2026 17:00:00").getTime();
             const ahora = new Date().getTime();
-            const faltante = fechaBoda - ahora;
-            if (faltante > 0) {
-                document.getElementById('d').innerText = String(Math.floor(faltante / (1000*60*60*24))).padStart(2, '0');
-                document.getElementById('h').innerText = String(Math.floor((faltante % (1000*60*60*24)) / (1000*60*60))).padStart(2, '0');
-                document.getElementById('m').innerText = String(Math.floor((faltante % (1000*60*60)) / (1000*60))).padStart(2, '0');
-                document.getElementById('s').innerText = String(Math.floor((faltante % (1000*60)) / 1000)).padStart(2, '0');
+            const diferencia = fechaBoda - ahora;
+
+            if (diferencia > 0) {
+                const d = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = d < 10 ? '0' + d : d;
+                document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+                document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+                document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+            } else {
+                document.getElementById('reloj').innerHTML = "<h2 class='caligrafica'>¡Llegó el gran día!</h2>";
             }
         }
-        actualizarContador(); setInterval(actualizarContador, 1000);
+
+        setInterval(actualizarReloj, 1000);
+        actualizarReloj();
     </script>
 </body>
 </html>
