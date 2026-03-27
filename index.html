@@ -3,36 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación de Boda - Ejemplo 2 (Álbum Romántico)</title>
+    <title>Nuestra Boda | Marta & Javier</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <style>
-        /* === VARIABLES DE COLOR (Fáciles de editar) === */
         :root {
-            /* Color de fondo: Crema muy suave con textura (ficticia) */
             --fondo-papel: #faf6f0; 
-            /* Color para textos caligráficos y acentos (Marrón rosado suave) */
             --color-acento: #8e735b; 
-            /* Color dorado para divisores y contador */
             --color-oro: #c5a059; 
-            /* Color de texto principal (Casi negro suave) */
             --texto-oscuro: #333333; 
-            /* Ancho máximo del contenedor (simulando teléfono) */
             --ancho-max: 480px; 
         }
 
         body {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0; /* Fondo gris para resaltar la invitación */
+            background-color: #f0f0f0;
             color: var(--texto-oscuro);
             font-family: 'Playfair Display', serif;
             text-align: center;
             overflow-x: hidden;
         }
 
-        /* Contenedor principal estilo "página de álbum" */
         .invitation-wrapper {
             max-width: var(--ancho-max);
             margin: 0 auto;
@@ -40,11 +33,9 @@
             position: relative;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             overflow: hidden;
-            /* Textura de papel (reemplazable por imagen) */
-            background-image: url('https://www.dropbox.com/scl/fi/pd9mjnnpuz1awyw4memr7/novios-de-frente.jpg?rlkey=fzbs6iftt0125yat387uxnbei&raw=1');
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
         }
 
-        /* === REPRODUCTOR DE MÚSICA FLOTANTE (REDISEÑADO) === */
         #music-box {
             position: fixed;
             top: 15px;
@@ -59,27 +50,14 @@
             display: flex;
             align-items: center;
             backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
         }
 
-        #m-icon {
-            font-size: 1.1rem;
-            color: var(--color-oro);
-            margin-right: 6px;
-        }
+        #m-icon { color: var(--color-oro); margin-right: 6px; }
+        #m-text { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--color-acento); font-weight: bold; }
 
-        #m-text {
-            font-size: 9px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--color-acento);
-            font-weight: bold;
-        }
-
-        /* === PORTADA (REDISEÑADA: Texto debajo de la foto) === */
         .hero-section {
             padding: 30px 20px;
-            background-color: white; /* Marco para la foto */
+            background-color: white;
             border-bottom: 1px solid #eee;
         }
 
@@ -88,7 +66,7 @@
             height: auto;
             display: block;
             border-radius: 4px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Foto flotante */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         h1.caligrafica {
@@ -104,112 +82,42 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--color-oro);
-            margin-bottom: 0;
         }
 
-        /* === SECCIONES DE CONTENIDO === */
-        section {
-            padding: 60px 25px;
-            border-bottom: 1px solid #f2ede4;
-        }
-
-        .label-section {
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--color-acento);
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        h2.caligrafica {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.5rem;
-            color: var(--color-acento);
-            margin: 0 0 25px 0;
-            font-weight: normal;
-        }
-
-        p.historia-texto {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--texto-oscuro);
-            font-style: italic;
-            margin: 0 auto;
-            max-width: 90%;
-        }
-
-        /* Divisor dorado sutil */
-        .divider-oro {
-            width: 80px;
-            height: 1px;
-            background-color: var(--color-oro);
-            margin: 40px auto;
-            opacity: 0.6;
-        }
-
-        /* Fotos secundarias con marco */
+        section { padding: 60px 25px; border-bottom: 1px solid #f2ede4; }
+        .label-section { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-acento); margin-bottom: 15px; font-weight: bold; }
+        h2.caligrafica { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--color-acento); margin: 0 0 25px 0; font-weight: normal; }
+        
+        .historia-texto { font-size: 1.1rem; line-height: 1.8; font-style: italic; max-width: 90%; margin: 0 auto; }
+        .divider-oro { width: 80px; height: 1px; background-color: var(--color-oro); margin: 40px auto; opacity: 0.6; }
+        
         .img-framed {
             width: 100%;
-            height: auto;
-            display: block;
-            margin-top: 40px;
-            border: 10px solid white; /* Marco "fotografía" */
+            border: 10px solid white;
             border-radius: 2px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             box-sizing: border-box;
+            margin-top: 30px;
         }
 
-        /* === DATOS FICTICIOS PARA EDICIÓN === */
-        .datos-ficticios {
-            background-color: rgba(255,255,255,0.5);
-            padding: 40px 20px;
-            border-radius: 8px;
-            border: 1px solid #f2ede4;
-        }
+        .datos-caja { background-color: rgba(255,255,255,0.5); padding: 40px 20px; border-radius: 8px; border: 1px solid #f2ede4; }
+        .dato-item { font-size: 1.1rem; margin: 10px 0; }
+        .dato-item strong { color: var(--color-acento); }
 
-        p.ficticio-item {
-            font-size: 1.1rem;
-            margin: 10px 0;
-        }
-
-        p.ficticio-item strong {
-            font-weight: bold;
-            color: var(--color-acento);
-        }
-
-        span.ficticio-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: #888;
-            display: block;
-            margin-bottom: 3px;
-        }
-
-        /* === BOTONES ROMÁNTICOS === */
         .btn-romantico {
             display: inline-block;
             margin-top: 25px;
-            padding: 18px 35px;
+            padding: 15px 30px;
             background-color: white;
             color: var(--color-acento);
             text-decoration: none;
             font-size: 0.8rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
             border: 1px solid var(--color-oro);
-            border-radius: 30px; /* Bordes redondeados */
-            transition: all 0.3s ease;
+            border-radius: 30px;
             font-weight: bold;
         }
 
-        .btn-romantico:hover {
-            background-color: var(--color-oro);
-            color: white;
-            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
-        }
-
-        /* Botón Confirmar (WhatsApp) ficticio */
         .btn-confirmar {
             display: inline-block;
             margin-top: 30px;
@@ -219,53 +127,20 @@
             text-decoration: none;
             font-size: 0.9rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
             border-radius: 30px;
-            transition: all 0.3s ease;
             width: 80%;
-            box-sizing: border-box;
             font-weight: bold;
         }
 
-        .btn-confirmar:hover {
-            background-color: #7a634e;
-            box-shadow: 0 5px 15px rgba(142, 115, 91, 0.3);
-        }
-
-        /* === CONTADOR DE CUENTA REGRESIVA === */
-        .timer-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 40px 0;
-        }
-
-        .t-block {
-            text-align: center;
-            min-width: 65px;
-        }
-
-        .t-val {
-            display: block;
-            font-size: 2rem;
-            color: var(--color-oro);
-            font-weight: bold;
-        }
-
-        .t-lab {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--color-acento);
-            opacity: 0.8;
-        }
+        .timer-container { display: flex; justify-content: center; gap: 15px; margin: 40px 0; }
+        .t-val { display: block; font-size: 2rem; color: var(--color-oro); font-weight: bold; }
+        .t-lab { font-size: 0.65rem; text-transform: uppercase; color: var(--color-acento); }
     </style>
 </head>
 <body onclick="iniciarMusica()">
 
     <div id="music-box" onclick="toggleMusic()">
-        <span id="m-icon">▶</span>
-        <span id="m-text">MUSICA</span>
+        <span id="m-icon">▶</span> <span id="m-text">MUSICA</span>
     </div>
     
     <audio id="cancion" loop>
@@ -275,8 +150,8 @@
     <div class="invitation-wrapper">
         
         <div class="hero-section">
-            <img src="https://www.dropbox.com/scl/fi/nyu3ho1a881zzq25aptyz/novios-de-frente.png?rlkey=dfo2w3jv4gmoktfz2vv14plvc&raw=1" alt="Ana & Carlos" class="img-hero">
-            <h1 class="caligrafica">Ana & Carlos</h1>
+            <img src="https://www.dropbox.com/scl/fi/pd9mjnnpuz1awyw4memr7/novios-de-frente.jpg?rlkey=fzbs6iftt0125yat387uxnbei&raw=1" class="img-hero">
+            <h1 class="caligrafica">Marta & Javier</h1>
             <p class="fecha-portada">14 . FEBRERO . 2026</p>
         </div>
 
@@ -286,10 +161,8 @@
             <p class="historia-texto">
                 "Todo comenzó con una mirada y una sonrisa que cambió nuestro destino. Descubrimos que la vida es mucho más bella cuando se camina de la mano..."
             </p>
-            <img src="https://www.dropbox.com/scl/fi/yxcamxu6ark6qj5jf9da1/novios-corriendo.jpg?rlkey=wt1aapl5nh89afj7n53zou3qt&raw=1" alt="Novios corriendo" class="img-framed">
-            
+            <img src="https://www.dropbox.com/scl/fi/yxcamxu6ark6qj5jf9da1/novios-corriendo.jpg?rlkey=wt1aapl5nh89afj7n53zou3qt&raw=1" class="img-framed">
             <div class="divider-oro"></div>
-            
             <p class="historia-texto">
                 "Nuestro viaje apenas comienza y no importa a dónde nos lleve la vida, mientras sea de tu mano..."
             </p>
@@ -298,67 +171,47 @@
         <section>
             <p class="label-section">¿Cuándo & Dónde?</p>
             <h2 class="caligrafica">La Ceremonia</h2>
-            
-            <div class="datos-ficticios">
-                <p class="ficticio-item">
-                    <span class="ficticio-label">Ubicación :</span>
-                    <strong>Catedral de la Inmaculada Concepción</strong>
-                </p>
-                <p class="ficticio-item">Xalapa, Veracruz</p>
+            <div class="datos-caja">
+                <p class="dato-item"><strong>Catedral de la Inmaculada Concepción</strong></p>
+                <p class="dato-item">Xalapa, Veracruz</p>
                 <div class="divider-oro" style="margin: 20px auto; width: 40px;"></div>
-                <p class="ficticio-item"><strong>17:00 Horas</strong></p>
-                
+                <p class="dato-item"><strong>17:00 Horas</strong></p>
                 <a href="#" class="btn-romantico">VER UBICACIÓN</a>
             </div>
         </section>
 
         <section>
             <p class="label-section">¡Estamos listos!</p>
-            
             <div class="timer-container">
                 <div class="t-block"><span class="t-val" id="d">00</span><span class="t-lab">Días</span></div>
                 <div class="t-block"><span class="t-val" id="h">00</span><span class="t-lab">Hrs</span></div>
                 <div class="t-block"><span class="t-val" id="m">00</span><span class="t-lab">Min</span></div>
                 <div class="t-block"><span class="t-val" id="s">00</span><span class="t-lab">Seg</span></div>
             </div>
-            
-            <div class="divider-oro"></div>
         </section>
 
         <section>
             <h2 class="caligrafica">La Recepción</h2>
-            
-            <div class="datos-ficticios">
-                <p class="ficticio-item">
-                    <span class="ficticio-label">Ubicación :</span>
-                    <strong>Hacienda del Refugio</strong>
-                </p>
-                <p class="ficticio-item">Xalapa, Veracruz</p>
+            <div class="datos-caja">
+                <p class="dato-item"><strong>Hacienda del Refugio</strong></p>
+                <p class="dato-item">Xalapa, Veracruz</p>
                 <div class="divider-oro" style="margin: 20px auto; width: 40px;"></div>
-                <p class="ficticio-item"><strong>19:30 Horas</strong></p>
-                
+                <p class="dato-item"><strong>19:30 Horas</strong></p>
                 <a href="#" class="btn-romantico">VER UBICACIÓN</a>
             </div>
-            
-            <img src="https://www.dropbox.com/scl/fi/snutqjlkrv7oglqswicq2/novios-besandoce.jpg?rlkey=ad7z44z08wgr0f4wcd20et7nz&raw=1" alt="Novios besándose" class="img-framed">
+            <img src="https://www.dropbox.com/scl/fi/snutqjlkrv7oglqswicq2/novios-besandoce.jpg?rlkey=ad7z44z08wgr0f4wcd20et7nz&raw=1" class="img-framed">
         </section>
 
-        <section style="padding: 100px 25px; background-color: white;">
+        <section style="padding: 100px 25px; background-color: white; border: none;">
             <h2 class="caligrafica" style="font-size: 3rem;">¡Te esperamos!</h2>
             <p style="font-size: 1.1rem; color: #666; font-style: italic;">
                 "Por favor, confirma tu asistencia para hacer este día aún más especial."
             </p>
-            <p class="ficticio-item">
-                <span class="ficticio-label">:</span>
-                <strong>+52 1 228 123 4567</strong>
-            </p>
-            <a href="#" class="btn-confirmar">CONFIRMAR ASISTENCIA</a>
+            <a href="https://wa.me/5212281234567" class="btn-confirmar">CONFIRMAR ASISTENCIA</a>
         </section>
-
     </div>
 
     <script>
-        // === 1. LÓGICA DEL REPRODUCTOR (Misma de antes) ===
         var audio = document.getElementById('cancion');
         var mIcon = document.getElementById('m-icon');
         var mText = document.getElementById('m-text');
@@ -377,9 +230,8 @@
             else { audio.pause(); mIcon.innerHTML = "▶"; mText.innerHTML = "MUSICA"; }
         }
 
-        // === 2. LÓGICA DEL CONTADOR (Misma de antes) ===
         function actualizarContador() {
-            const fechaBoda = new Date("Feb 14, 2026 18:00:00").getTime();
+            const fechaBoda = new Date("Feb 14, 2026 17:00:00").getTime();
             const ahora = new Date().getTime();
             const faltante = fechaBoda - ahora;
             if (faltante > 0) {
