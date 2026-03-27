@@ -13,125 +13,93 @@
             --fondo-papel: #faf6f0; 
             --color-acento: #8e735b; 
             --color-oro: #c5a059; 
-            --texto-oscuro: #333333; 
             --ancho-max: 480px; 
         }
 
         body {
             margin: 0; padding: 0;
             background-color: #f0f0f0;
-            color: var(--texto-oscuro);
             font-family: 'Playfair Display', serif;
             text-align: center;
-            overflow-x: hidden;
         }
 
         .invitation-wrapper {
             max-width: var(--ancho-max);
             margin: 0 auto;
             background-color: var(--fondo-papel);
-            position: relative;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             overflow: hidden;
-            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
         }
 
+        /* Reproductor */
         #music-box {
             position: fixed; top: 15px; right: 15px; z-index: 1000;
-            background: rgba(255,255,255,0.9);
+            background: white; border: 1px solid var(--color-oro);
+            padding: 8px 12px; border-radius: 50px; cursor: pointer;
+            display: flex; align-items: center; font-size: 10px;
+        }
+
+        .hero-section { padding: 30px 20px; background: white; }
+        .img-hero { width: 100%; border-radius: 4px; }
+        h1.caligrafica { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--color-acento); margin: 15px 0; }
+
+        /* --- SECCIÓN DEL CONTADOR (RESALTADA) --- */
+        .contador-wrapper {
+            background-color: #fff;
+            margin: 20px;
+            padding: 25px 10px;
             border: 1px solid var(--color-oro);
-            padding: 8px 15px; border-radius: 50px; cursor: pointer;
-            display: flex; align-items: center; backdrop-filter: blur(5px);
+            border-radius: 10px;
         }
-
-        #m-icon { color: var(--color-oro); margin-right: 6px; }
-        #m-text { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--color-acento); font-weight: bold; }
-
-        .hero-section {
-            padding: 30px 20px;
-            background-color: white;
-            border-bottom: 1px solid #eee;
+        .label-faltan {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-acento);
+            margin-bottom: 15px;
+            display: block;
         }
-
-        .img-hero {
-            width: 100%; height: auto; display: block;
-            border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
-
-        h1.caligrafica {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3.5rem; color: var(--color-acento);
-            margin: 20px 0 10px; font-weight: normal;
-        }
-
-        .fecha-portada { font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-oro); }
-
-        section { padding: 50px 25px; border-bottom: 1px solid #f2ede4; }
-        .label-section { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-acento); margin-bottom: 15px; font-weight: bold; }
-        h2.caligrafica { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--color-acento); margin: 0 0 25px 0; font-weight: normal; }
-        
-        /* ESTILOS DEL CONTADOR RESALTADO */
-        .timer-container { 
-            display: flex; 
-            justify-content: center; 
-            gap: 10px; 
-            margin: 20px 0; 
-        }
-        .t-block { 
-            background: white; 
-            border: 1px solid var(--color-oro);
-            padding: 12px 5px; 
-            border-radius: 8px; 
-            min-width: 70px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
+        .t-block { min-width: 60px; }
         .t-val { 
             display: block; 
-            font-size: 1.8rem; 
-            color: var(--color-acento); 
-            font-weight: bold; 
-            line-height: 1;
-        }
-        .t-lab { 
-            font-size: 0.6rem; 
-            text-transform: uppercase; 
+            font-size: 2rem; 
             color: var(--color-oro); 
-            margin-top: 5px; 
-            display: block;
-            letter-spacing: 1px;
+            font-weight: bold; 
+            margin-bottom: 5px;
         }
+        .t-lab { font-size: 0.6rem; text-transform: uppercase; color: #999; }
 
-        .img-framed {
-            width: 100%; border: 10px solid white; border-radius: 2px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08); box-sizing: border-box; margin-top: 30px;
-        }
-
-        .datos-caja { background-color: rgba(255,255,255,0.6); padding: 35px 20px; border-radius: 8px; border: 1px solid var(--color-oro); }
-        .dato-item { font-size: 1.1rem; margin: 10px 0; }
-
+        /* Botones y Datos */
+        section { padding: 40px 25px; border-bottom: 1px solid #eee; }
+        .datos-caja { background: white; padding: 30px 15px; border: 1px solid #f2ede4; border-radius: 8px; }
+        
         .btn-romantico {
             display: inline-flex; align-items: center; gap: 8px;
-            margin-top: 20px; padding: 12px 25px;
-            background-color: white; color: var(--color-acento);
-            text-decoration: none; font-size: 0.75rem;
-            letter-spacing: 2px; border: 1px solid var(--color-oro);
-            border-radius: 30px; font-weight: bold;
+            margin-top: 20px; padding: 12px 20px;
+            background: white; color: var(--color-acento);
+            text-decoration: none; border: 1px solid var(--color-oro);
+            border-radius: 30px; font-size: 0.7rem; font-weight: bold;
         }
-
+        
         .btn-confirmar {
-            display: inline-block; margin-top: 30px; padding: 20px 40px;
-            background-color: var(--color-acento); color: white;
-            text-decoration: none; font-size: 0.9rem;
-            letter-spacing: 2px; border-radius: 30px; width: 85%; font-weight: bold;
+            display: inline-block; padding: 20px;
+            background: var(--color-acento); color: white;
+            text-decoration: none; border-radius: 30px; width: 80%; font-weight: bold;
         }
 
-        .divider-oro { width: 60px; height: 1px; background-color: var(--color-oro); margin: 25px auto; opacity: 0.6; }
+        .img-framed { width: 100%; border: 8px solid white; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body onclick="iniciarMusica()">
 
     <div id="music-box" onclick="toggleMusic()">
-        <span id="m-icon">▶</span> <span id="m-text">MUSICA</span>
+        <span id="m-icon" style="color: var(--color-oro); margin-right: 5px;">▶</span> 
+        <span id="m-text" style="font-weight: bold;">MUSICA</span>
     </div>
     
     <audio id="cancion" loop>
@@ -143,37 +111,24 @@
         <div class="hero-section">
             <img src="https://www.dropbox.com/scl/fi/pd9mjnnpuz1awyw4memr7/novios-de-frente.jpg?rlkey=fzbs6iftt0125yat387uxnbei&raw=1" class="img-hero">
             <h1 class="caligrafica">Marta & Javier</h1>
-            <p class="fecha-portada">14 . FEBRERO . 2026</p>
+            <p style="letter-spacing: 3px; color: var(--color-oro);">14 . FEBRERO . 2026</p>
         </div>
 
-        <section>
-            <p class="label-section">Nuestra Historia</p>
-            <h2 class="caligrafica">Como en un sueño...</h2>
-            <p style="font-style: italic; color: #666; line-height: 1.6;">
-                "Todo comenzó con una mirada y una sonrisa que cambió nuestro destino."
-            </p>
-
-            <div class="divider-oro"></div>
-            
-            <p class="label-section">FALTAN:</p>
-            <div class="timer-container" id="reloj-boda">
+        <div class="contador-wrapper">
+            <span class="label-faltan">Faltan para el gran día</span>
+            <div class="timer-container">
                 <div class="t-block"><span class="t-val" id="dias">00</span><span class="t-lab">Días</span></div>
                 <div class="t-block"><span class="t-val" id="horas">00</span><span class="t-lab">Hrs</span></div>
                 <div class="t-block"><span class="t-val" id="minutos">00</span><span class="t-lab">Min</span></div>
                 <div class="t-block"><span class="t-val" id="segundos">00</span><span class="t-lab">Seg</span></div>
             </div>
-
-            <img src="https://www.dropbox.com/scl/fi/yxcamxu6ark6qj5jf9da1/novios-corriendo.jpg?rlkey=wt1aapl5nh89afj7n53zou3qt&raw=1" class="img-framed">
-        </section>
+        </div>
 
         <section>
-            <p class="label-section">¿Cuándo & Dónde?</p>
             <h2 class="caligrafica">La Ceremonia</h2>
             <div class="datos-caja">
-                <p class="dato-item"><strong>Catedral de la Inmaculada Concepción</strong></p>
-                <p class="dato-item">Xalapa, Veracruz</p>
-                <div class="divider-oro"></div>
-                <p class="dato-item"><strong>17:00 Horas</strong></p>
+                <p><strong>Catedral de la Inmaculada Concepción</strong></p>
+                <p>Xalapa, Veracruz | 17:00 Horas</p>
                 <a href="https://maps.google.com" target="_blank" class="btn-romantico">
                     <i class="fa-solid fa-location-dot"></i> VER UBICACIÓN
                 </a>
@@ -183,10 +138,8 @@
         <section>
             <h2 class="caligrafica">La Recepción</h2>
             <div class="datos-caja">
-                <p class="dato-item"><strong>Hacienda del Refugio</strong></p>
-                <p class="dato-item">Xalapa, Veracruz</p>
-                <div class="divider-oro"></div>
-                <p class="dato-item"><strong>19:30 Horas</strong></p>
+                <p><strong>Hacienda del Refugio</strong></p>
+                <p>Xalapa, Veracruz | 19:30 Horas</p>
                 <a href="https://maps.google.com" target="_blank" class="btn-romantico">
                     <i class="fa-solid fa-location-dot"></i> VER UBICACIÓN
                 </a>
@@ -194,12 +147,9 @@
             <img src="https://www.dropbox.com/scl/fi/snutqjlkrv7oglqswicq2/novios-besandoce.jpg?rlkey=ad7z44z08wgr0f4wcd20et7nz&raw=1" class="img-framed">
         </section>
 
-        <section style="padding: 80px 25px; background-color: white; border: none;">
+        <section style="background: white;">
             <h2 class="caligrafica" style="font-size: 3rem;">¡Te esperamos!</h2>
-            <p style="font-size: 1.1rem; color: #666; font-style: italic;">
-                "Tu presencia hará este día inolvidable."
-            </p>
-            <a href="https://wa.me/5212281234567?text=¡Hola! Confirmo mi asistencia a la boda." class="btn-confirmar">CONFIRMAR ASISTENCIA</a>
+            <a href="https://wa.me/5212281234567" class="btn-confirmar">CONFIRMAR ASISTENCIA</a>
         </section>
     </div>
 
@@ -207,25 +157,25 @@
         // MÚSICA
         var audio = document.getElementById('cancion');
         var mIcon = document.getElementById('m-icon');
-        var mText = document.getElementById('m-text');
-        var musicaIniciada = false;
+        var playIniciado = false;
 
         function iniciarMusica() {
-            if (!musicaIniciada) {
-                audio.play().catch(e => console.log("Interacción necesaria")); 
-                musicaIniciada = true;
-                mIcon.innerHTML = "⏸"; mText.innerHTML = "PAUSAR";
+            if (!playIniciado) {
+                audio.play().catch(e => console.log("Esperando click"));
+                playIniciado = true;
+                mIcon.innerHTML = "⏸";
             }
         }
 
         function toggleMusic() {
-            musicaIniciada = true;
-            if (audio.paused) { audio.play(); mIcon.innerHTML = "⏸"; mText.innerHTML = "PAUSAR"; } 
-            else { audio.pause(); mIcon.innerHTML = "▶"; mText.innerHTML = "MUSICA"; }
+            playIniciado = true;
+            if (audio.paused) { audio.play(); mIcon.innerHTML = "⏸"; } 
+            else { audio.pause(); mIcon.innerHTML = "▶"; }
         }
 
-        // SCRIPT DEL CONTADOR FUNCIONAL
-        function cuentaRegresiva() {
+        // CONTADOR FUNCIONAL MEJORADO
+        function actualizarContador() {
+            // Fecha objetivo: 14 de Febrero de 2026 a las 17:00
             const fechaBoda = new Date("February 14, 2026 17:00:00").getTime();
             const ahora = new Date().getTime();
             const faltante = fechaBoda - ahora;
@@ -236,17 +186,20 @@
                 const m = Math.floor((faltante % (1000 * 60 * 60)) / (1000 * 60));
                 const s = Math.floor((faltante % (1000 * 60)) / 1000);
 
-                document.getElementById('dias').innerText = d < 10 ? '0' + d : d;
-                document.getElementById('horas').innerText = h < 10 ? '0' + h : h;
-                document.getElementById('minutos').innerText = m < 10 ? '0' + m : m;
-                document.getElementById('segundos').innerText = s < 10 ? '0' + s : s;
+                // Inyectar los valores en el HTML
+                document.getElementById('dias').innerHTML = (d < 10 ? '0' + d : d);
+                document.getElementById('horas').innerHTML = (h < 10 ? '0' + h : h);
+                document.getElementById('minutos').innerHTML = (m < 10 ? '0' + m : m);
+                document.getElementById('segundos').innerHTML = (s < 10 ? '0' + s : s);
             } else {
-                document.getElementById('reloj-boda').innerHTML = "<h2 class='caligrafica'>¡Hoy es el gran día!</h2>";
+                document.querySelector(".contador-wrapper").innerHTML = "<h2 class='caligrafica'>¡Es hoy!</h2>";
             }
         }
 
-        setInterval(cuentaRegresiva, 1000);
-        cuentaRegresiva(); // Llamada inmediata
+        // Ejecutar cada segundo
+        setInterval(actualizarContador, 1000);
+        // Ejecutar una vez al cargar para evitar el 00 inicial
+        actualizarContador();
     </script>
 </body>
 </html>
